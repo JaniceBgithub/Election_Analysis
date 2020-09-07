@@ -26,5 +26,41 @@ There were 369,711 votes cast in this congressional election.  There were three 
    
    ## Election Audit Summary
    
-   
+  The script developed for this election can be used for any election.  Most of the code is already applicable for any situation.  
+  For example, the python script reads the file and finds the candidate names.   There is a similar piece of code for finding the county names. 
+ 
+      # For each row in the CSV file.
+      for row in reader:
+        
+        # Get the candidate name from each row.
+        candidate_name = row[2]    
+        
+        # If the candidate does not match any existing candidate add it to the candidate list
+        if candidate_name not in candidate_options:
+
+            # Add the candidate name to the candidate list.
+            candidate_options.append(candidate_name)
+     
+     
+The raw input data files and output files are hard coded into python as follows.  
+     
+        # Add a variable to load a file from a path.
+        file_to_load = os.path.join("Resources", "election_results.csv")
+
+        # Add a variable to save the file to a path.
+        file_to_save = os.path.join("analysis", "election_analysis.txt")
+     
+An additional python script could be created to read in the name of the election results csv file in a specific folder and then run the analysis.  The program could be modified to process mulitple text files in the same folder one at a time. 
+
+The following code could be used to run through all the csv files in a specific folder and run multiple analysis:
+
+      import glob 
+      for file_name in glob.iglob('Election_Results/**/*.csv', recursive=True):
+
+ Similarly, python could create an election analysis text file for each result using: 
+ 
+        filehandle = open('file_name.txt', 'w+')
+        
+The "W" means write to the file and the "+" means that the file must be created. 
+ 
  
