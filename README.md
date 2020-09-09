@@ -24,7 +24,7 @@ There were 369,711 votes cast in this congressional election.  There were three 
    
    Dianna DeGette won the election with 73.8% of the vote and 272,892 votes. 
    
-      ## Execution of python script to the terminal
+   ## Execution of python script to the terminal
    
    The election results were run in a python terminal as well as written to a text file.  In this case, I used jupyter notebook for executing the code.  
    The screenshot of results is:
